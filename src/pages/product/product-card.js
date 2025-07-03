@@ -7,6 +7,11 @@ export default function ProductCard({ product }) {
     const goToDetail = (id) => {
         router.push(`/product/${id}`);
     }
+
+      if (!product || !product.image || !product.title) {
+    return <p>Invalid product data</p>;
+  }
+
     return (
         <>
         <div className="bg-white shadow-md rounded-lg p-4 flex flex-col">
