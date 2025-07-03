@@ -1,13 +1,23 @@
+import FavoriteButton from "@/components/favorite-btn";
+import Image from "next/image";
+
 export default function ProductDetail({ product }) {
+    
+
     return (
         <div className="p-8">
+            <Image src={product.image}
+                alt={product.name}
+                className="w-fit h-48 object-cover rounded-t-lg"
+                width={200}
+                height={200}
+                
+            />
             <h1 className="text-2xl font-bold mb-4">{product.title}</h1>
-            {/* <img src={product.image} alt={product.title} className="w-full h-auto mb-4" /> */}
             <p className="text-lg mb-4">{product.description}</p>
             <p className="text-xl font-semibold mb-4">${product.price}</p>
-            <button className="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">
-                Add to Cart
-            </button>
+            
+            <FavoriteButton productId={product.id} />
         </div>
     );  
 }

@@ -8,9 +8,9 @@ export default function ProductCard({ product }) {
         router.push(`/product/${id}`);
     }
 
-      if (!product || !product.image || !product.title) {
-    return <p>Invalid product data</p>;
-  }
+    if (!product || !product.image || !product.title) {
+        return <p>Invalid product data</p>;
+    }
 
     return (
         <>
